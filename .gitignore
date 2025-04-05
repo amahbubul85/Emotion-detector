@@ -1,0 +1,5 @@
+# Ignore dataset files and folders
+datasets/
+*.h5
+*.npz
+*.csv
