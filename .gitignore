@@ -1,4 +1,3 @@
-# Ignore dataset files and folders
+# Ignore dataset folders and everything inside them
 datasets/
-*.npz
-*.csv
+mini_dataset/
