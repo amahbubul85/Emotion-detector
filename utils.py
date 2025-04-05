@@ -14,7 +14,7 @@ def load_model():
     x = tf.keras.layers.Dense(1, activation='sigmoid', name='fc')(x)
     
     model = tf.keras.Model(inputs=input_img, outputs=x)
-    model.load_weights("model/happy_model.weights.h5")
+    model.load_weights("model/final_model.weights.h5")
     return model
 
 # Preprocess image

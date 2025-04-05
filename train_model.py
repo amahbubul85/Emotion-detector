@@ -61,3 +61,23 @@ history = model.fit(
     validation_data=(X_test, Y_test),
     callbacks=[checkpoint]
 )
+# Force save final weights manually
+
+
+import tensorflow as tf
+
+# Load happy/sad dummy faces
+dataset = tf.keras.preprocessing.image_dataset_from_directory(
+    "mini_dataset",
+    image_size=(64, 64),
+    batch_size=8,
+    label_mode="binary"
+)
+
+# Split into train/test
+total_batches = tf.data.experimental.cardinality(dataset).numpy()
+train_size = int(0.8 * total_batches)
+train_dataset = dataset.take(train_size)
+test_dataset = dataset.skip(train_size)
+
+model.save_weights("model/final_model.weights.h5")
